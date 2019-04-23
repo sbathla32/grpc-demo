@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.communication";
+option java_outer_classname = "CommunicationProto";
+option objc_class_prefix = "COM";
+
+package communication;
+
+// The greeting service definition.
+service Communicator {
+  // Sends a greeting
+  rpc SendMessage (DigitalRequest) returns (DigitalReply) {}
+
+// Sends another greeting
+  rpc SendMessageAgain (DigitalRequest) returns (DigitalReply) {}
+}
+
+// The request message containing the user's name.
+message DigitalRequest { 
+  string name = 1;
+}
+
+// The response message containing the greetings
+message DigitalReply {
+  string message = 1;
+}
